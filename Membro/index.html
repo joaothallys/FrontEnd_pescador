@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/29fac92925.css">
+    <link rel="stylesheet" href="/Membro/css/main.css">
+    <link rel="stylesheet" href="/Membro/css/button.css">
+    <link rel="stylesheet" href="/Membro/css/records.css">
+    <link rel="stylesheet" href="/Membro/css/modal.css">
+    <link rel="stylesheet" href="/Membro/css/barra.css">
+    <title>Pescador</title>
+</head>
+
+<body>
+
+    <div class="menu">
+        <nav>
+            <a href="#" title="Home">
+                <span class="fa fa-bars"></span>
+                <span class="label">Menu</span>
+            </a>
+            <a href="/home/index.html" title="Home">
+                <span class="fa fa-home"></span>
+                <span class="label">Home</span>
+            </a>
+            <a href="#" title="About" class="active">
+                <span class="fa fa-user"></span>
+                <span class="label">Membros</span>
+            </a>
+            <a href="/Eventos/index.html" title="Blog">
+                <span class="fa fa-pencil"></span>
+                <span class="label">Eventos</span>
+            </a>
+            <a href="/Inscricao/index.html" title="Contact">
+                <span class="fa fa-money"></span>
+                <span class="label">Inscrição</span>
+            </a>
+            <a href="/login/index.html" title="Logout">
+                <span class="fa fa-power-off"></span>
+                <span class="label">Sair</span>
+            </a>
+        </nav>
+    </div>
+
+    <header>
+        <h1 class="header-title">Cadastro de Membros</h1>
+    </header>
+
+    <main>
+        <div class="buttons-container">
+            <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar</button>
+            <button type="button" class="button blue mobile" id="listarMembros">Listar Membros</button>
+            <button class="button blue" id="exportarRelatorio">Exportar Relatório</button>
+
+            <!-- Adicione os campos de pesquisa ao lado do botão "Listar Membros" -->
+            <form class="search-form" id="searchForm">
+                <label for="searchType">Tipo de Pesquisa:</label>
+                <select id="searchType">
+                    <option value="id">ID</option>
+                    <option value="nome">Nome</option>
+                </select>
+
+                <input type="text" class="button " placeholder="Digite o valor" id="searchValue">
+                <button class="button blue" id="pesquisarPorId">Pesquisar</button>
+            </form>
+            
+        </div>
+
+        <table class="records">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Celular</th>
+                    <th>Cidade</th>
+                    <th>Data de Inscrição</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="membrosTableBody">
+                <!-- Aqui serão adicionados dinamicamente os membros -->
+            </tbody>
+        </table>
+
+        <!-- Modal para adicionar novo membro -->
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2>Novo Cliente</h2>
+                    <span class="modal-close" id="modalClose">&#10006;</span>
+                </header>
+                <form class="modal-form" id="membroForm">
+                    <input type="text" class="modal-field" placeholder="Nome do Cliente" id="nomeInput">
+                    <input type="email" class="modal-field" placeholder="E-mail do Cliente" id="emailInput">
+                    <input type="text" class="modal-field" placeholder="Celular do Cliente" id="telefoneInput">
+                    <input type="text" class="modal-field" placeholder="Cidade do Cliente" id="cidadeInput">
+                    <input type="text" class="modal-field" placeholder="Data da Inscrição" id="dataInscricaoInput">
+                </form>
+
+                <footer class="modal-footer">
+                    <button class="button green" id="salvarMembro">Salvar</button>
+                    <button class="button blue" id="salvarEdicaoMembro">Salvar Edição</button>
+                    <button class="button blue" id="cancelarMembro">Cancelar</button>
+                </footer>
+            </div>
+        </div>
+    </main>
+
+    <!-- Adicione isso no final do seu arquivo HTML, antes da tag </body> -->
+    <script src="/Membro/main.js" defer></script>
+</body>
+
+</html>

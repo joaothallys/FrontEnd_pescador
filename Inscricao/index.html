@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/29fac92925.css">
+    <link rel="stylesheet" href="/inscricao/css/main.css">
+    <link rel="stylesheet" href="/inscricao/css/button.css">
+    <link rel="stylesheet" href="/inscricao/css/records.css">
+    <link rel="stylesheet" href="/inscricao/css/modal.css">
+    <link rel="stylesheet" href="/inscricao/css/barra.css">
+    <title>Pescador</title>
+</head>
+
+<body>
+
+    <div class="menu">
+        <nav>
+            <a href="#" title="Home">
+                <span class="fa fa-bars"></span>
+                <span class="label">Menu</span>
+            </a>
+            <a href="/home/index.html" title="Home">
+                <span class="fa fa-home"></span>
+                <span class="label">Home</span>
+            </a>
+            <a href="/Membro/index.html" title="About" class="active">
+                <span class="fa fa-user"></span>
+                <span class="label">Membros</span>
+            </a>
+            <a href="/Eventos/index.html" title="Blog">
+                <span class="fa fa-pencil"></span>
+                <span class="label">Eventos</span>
+            </a>
+            <a href="#" title="Contact">
+                <span class="fa fa-money"></span>
+                <span class="label">Inscrição</span>
+            </a>
+            <a href="/login/index.html" title="Logout">
+                <span class="fa fa-power-off"></span>
+                <span class="label">Sair</span>
+            </a>
+        </nav>
+    </div>
+
+    <header>
+        <h1 class="header-title">Cadastro de Inscricão</h1>
+    </header>
+
+    <main>
+        <div class="buttons-container">
+            <button type="button" class="button blue mobile" id="cadastrarInscricao">Cadastrar Inscrição</button>
+            <button type="button" class="button blue mobile" id="listarInscricao">Listar Inscrições</button> 
+        </div>
+
+        <table class="records">
+            <thead>
+                <tr>
+                    <th> Nome do Membro</th>
+                    <th>Nome do Evento</th>
+                    <th>Data da Inscrição</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="inscricoesTableBody">
+                <!-- Aqui serão adicionados dinamicamente os membros -->
+            </tbody>
+        </table>
+
+        <!-- Modal para adicionar novo membro -->
+        <div class="modal" id="modalInscricao">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2>Novo Inscrição</h2>
+                    <span class="modal-close" id="modalCloseInscricao">&#10006;</span>
+                </header>
+                <form class="modal-form" id="InscricaoForm">
+                    <input type="text" class="modal-field" placeholder="ID do Membro" id="membroIdInput">
+                    <input type="text" class="modal-field" placeholder="Nome do Membro" id="nomeMembroInput">
+                    <input type="text" class="modal-field" placeholder="Nome do Evento" id="nomeEventoInput">
+                    <input type="text" class="modal-field" placeholder="Data da Inscrição" id="dataInscricaoInput">
+                </form>
+                <footer class="modal-footer">
+                    <button class="button green" id="salvarNovoInscricao">Salvar Nova Inscrição</button>
+                    <button class="button blue" id="cancelarInscricao">Cancelar</button>
+                </footer>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="/Inscricao/main.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/login/css/style.css">
+
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-image">
+            <img src="/login/img/7123690.jpg" alt="">
+        </div>
+        <div class="form">
+            <form id="loginForm">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Seja bem-vindo!</h1>
+                        <br>
+                    </div>
+
+                    <div class="campo">
+                        <label for="email"><strong>E-mail:</strong></label>
+                        <input type="text" name="email" id="email" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="senha"><strong>Senha:</strong></label>
+                        <input type="password" name="senha" id="senha" required>
+                    </div>
+
+                    <button class="botao" type="button" onclick="validarLogin()">Login</button>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validarLogin() {
+            // Obtenha os valores dos campos de entrada
+            var email = document.getElementById('email').value;
+            var senha = document.getElementById('senha').value;
+
+            // Faça a validação (substitua isso com a lógica real de validação)
+            if (email === 'adm@pesca.com.br' && senha === 'admin') {
+                // Se as credenciais são válidas, redirecione para a tela de home
+                window.location.href = '/home/index.html';
+            } else {
+                // Se as credenciais são inválidas, exiba uma mensagem de erro (substitua isso com sua lógica real)
+                alert('Credenciais inválidas. Tente novamente.');
+            }
+        }
+    </script>
+</body>
+
+</html>

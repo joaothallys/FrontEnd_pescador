@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #eee;
+  font-family: Roboto, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.menu {
+  position: fixed;
+  height: 100vh;
+  width: 4rem;
+  background: rgb(255, 149, 1);
+  overflow: hidden;
+  transition: width .3s ease;
+}
+
+.menu:hover,
+.menu.pinned {
+  width: 10rem;
+}
+
+.menu #teste {
+  width: 500px;
+  background: #a3a09c;
+}
+
+.menu #teste .icon-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin-top: 5px;
+  background-color: #f5f5f5;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.menu a {
+  color: #161515;
+  text-decoration: none;
+  display: table;
+  width: 10rem;
+}
+
+.menu a:hover {
+  background: #084C57;
+  color: #fff;
+}
+
+.menu a .fa {
+  width: 4rem;
+  display: table-cell;
+  font-size: 20px;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.menu a.label {
+  display: table-cell;
+}
+
+.custom-sidebar {
+  margin-left: 0; /* Adjust as needed */
+}
+
+@media (max-width: 768px) {
+  .menu {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .modal {
+    margin-left: 0;
+  }
+}
