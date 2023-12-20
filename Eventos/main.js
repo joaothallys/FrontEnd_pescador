@@ -338,6 +338,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 });
-
-
-

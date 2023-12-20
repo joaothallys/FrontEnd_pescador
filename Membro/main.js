@@ -87,8 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     });
 
-    document.getElementById('pesquisarMembros').addEventListener('click', function () {
-        // Chama a função para pesquisar membros quando o botão "Pesquisar Membros" é clicado
+    document.getElementById('pesquisarPorId').addEventListener('click', function () {
         pesquisarMembros();
     });
 
@@ -98,27 +97,46 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     function pesquisarMembros() {
-       
         limparTabelaMembros();
     
         // Obtém os valores da caixa de seleção e do campo de pesquisa
-        var searchType = document.getElementById('searchType').value;
         var searchValue = document.getElementById('searchValue').value;
+        var searchType = document.getElementById('searchType').value;
     
-        // Faz a requisição GET para pesquisar os membros com base no tipo de pesquisa e valor
-        fetch(`http://localhost:8080/api/membros/${searchType}/${searchValue}`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                data.forEach(membro => adicionarMembroATabela(membro));
-            })
-            .catch(error => {
-                console.error('Erro na requisição:', error.message); // Loga detalhes do erro
-            });
+        // Verifica o tipo de pesquisa
+        if (searchType === 'id') {
+            // Faz a requisição GET para pesquisar os membros por ID
+            fetch(`http://localhost:8080/api/membros/${searchValue}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    data.forEach(membro => adicionarMembroATabela(membro));
+                })
+                .catch(error => {
+                    console.error('Erro na requisição:', error.message);
+                });
+        } else if (searchType === 'nome') {
+            // Faz a requisição GET para pesquisar os membros por nome
+            fetch(`http://localhost:8080/api/membros/nome/=${searchValue}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    data.forEach(membro => adicionarMembroATabela(membro));
+                })
+                .catch(error => {
+                    console.error('Erro na requisição:', error.message);
+                });
+        } else {
+            console.error('Tipo de pesquisa inválido:', searchType);
+        }
     }
     
 
